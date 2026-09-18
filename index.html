@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahil Kancherla — Research &amp; Civic Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --bg-panel: #F2F0EA;
+    --ink: #1B2A41;
+    --ink-soft: #4B5A6B;
+    --rule: #DAD6CC;
+    --gold: #96702F;
+    --gold-soft: #F1E8D8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .serif {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+  a { color: inherit; }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 72px 0 40px;
+  }
+  header .kicker {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  header h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  header p.role {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    max-width: 520px;
+  }
+  header .meta {
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* Sections */
+  section {
+    padding: 52px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type { border-bottom: none; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .section-head h2 {
+    font-size: 24px;
+  }
+  .section-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .section-intro {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 10px 0 28px;
+    max-width: 560px;
+  }
+
+  /* Entry */
+  .entry {
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .entry:first-of-type { border-top: none; }
+  .entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .entry-title {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .entry-org {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+  .entry-desc {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    max-width: 580px;
+  }
+  .entry-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .entry-link:hover { border-bottom-color: var(--gold); }
+  .entry-link::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-top: 1.5px solid var(--gold);
+    border-right: 1.5px solid var(--gold);
+    transform: rotate(45deg);
+    margin-left: 2px;
+  }
+  .status-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gold);
+    background: var(--gold-soft);
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-top: 8px;
+  }
+
+  /* Contact */
+  .contact-block {
+    padding: 56px 0 80px;
+    text-align: left;
+  }
+  .contact-block h2 { font-size: 22px; margin-bottom: 10px; }
+  .contact-block p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+  .btn-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 13px 22px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .btn-email:hover { background: #14202f; }
+
+  footer {
+    padding: 28px 0 60px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    header { padding: 48px 0 32px; }
+    header h1 { font-size: 30px; }
+    .entry-top { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Research &amp; Public Policy Work</div>
+    <h1>Sahil Kancherla</h1>
+    <p class="role">Municipal finance, adolescent health policy, and food-insecurity research — Lawrence E. Elkins High School, Missouri City, TX.</p>
+    <div class="meta">Class of 2027</div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <h2>Public Record</h2>
+    </div>
+    <p class="section-intro">Published writing and adopted policy work — publicly available in full.</p>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Op-Ed: School Start Times and Adolescent Sleep</div>
+          <div class="entry-org">CT Mirror</div>
+        </div>
+        <a class="entry-link" href="#" target="_blank" rel="noopener">Read</a>
+      </div>
+      <div class="entry-desc">Published commentary connecting sleep research to school start-time policy.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">National Policy Brief — School Start Times</div>
+          <div class="entry-org">Start School Later</div>
+        </div>
+        <a class="entry-link" href="https://drive.google.com/drive/folders/1k6Apn0Xb1QlLjDQe7jw4p_DexsPRKb5z?usp=sharing" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="entry-desc">Authored the national issue brief adopted by 53 Start School Later chapters as their local advocacy template; cited in support of Maryland SB0103.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Research</h2>
+      <span class="section-note">Cleared for release by research supervisors</span>
+    </div>
+    <p class="section-intro">Human-subjects research conducted with Baylor College of Medicine / Texas Children's Hospital.</p>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">School Start Times &amp; Adolescent Mental Health</div>
+          <div class="entry-org">Baylor College of Medicine / Texas Children's Hospital — First Author</div>
+        </div>
+        <a class="entry-link" href="https://drive.google.com/drive/folders/1WCHpK-tKUHyVBILP_y9A-OqEedDLBblj?usp=sharing" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="entry-desc">IRB-approved survey study of 200+ parents examining the relationship between school start times and teen mental health.</div>
+      <span class="status-tag">In review — Preventing Chronic Disease (CDC)</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Inpatient Food Insecurity Among Caregivers</div>
+          <div class="entry-org">Texas Children's Hospital — Research Assistant</div>
+        </div>
+      </div>
+      <div class="entry-desc">Analysis of 1,000+ patient records mapping gaps between in-hospital food support and post-discharge food access.</div>
+      <span class="status-tag">Manuscript in preparation</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Sugar4Smiles</h2>
+    </div>
+    <p class="section-intro">Nonprofit resource-allocation work.</p>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Resource Allocation Model (Open Source)</div>
+          <div class="entry-org">Sugar4Smiles — Founder &amp; President</div>
+        </div>
+        <a class="entry-link" href="https://github.com/sahilkancherl-cpu/resource-allocation-model" target="_blank" rel="noopener">View Code</a>
+      </div>
+      <div class="entry-desc">Open-source regression model used to allocate birthday kits across chapters based on local need.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Municipal Finance</h2>
+    </div>
+    <p class="section-intro">Applied revenue and budget analysis conducted with city government.</p>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Municipal Revenue Capacity Regression Study</div>
+          <div class="entry-org">Missouri City Government</div>
+        </div>
+        <a class="entry-link" href="https://drive.google.com/drive/folders/1C8SO3lKjoQZIOObFgVFv1SWO34r2rkrB?usp=sharing" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="entry-desc">Regression model identifying sales-tax revenue underperformance; used by City financial leadership in Economic Development discussions on retail-capture opportunities.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Revenue Benchmarking Model (Open Source)</div>
+          <div class="entry-org">Missouri City Government</div>
+        </div>
+        <a class="entry-link" href="https://github.com/sahilkancherl-cpu/Revenue-benchmarking-model/tree/main" target="_blank" rel="noopener">View Code</a>
+      </div>
+      <div class="entry-desc">Open-source implementation of the revenue benchmarking methodology used in the analysis above.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">Comparative Fee &amp; Tax Benchmarking</div>
+          <div class="entry-org">City of Sugar Land</div>
+        </div>
+        <a class="entry-link" href="https://drive.google.com/drive/folders/1BaSf8ltwlMc_LpPaH7luGONU4Ethmaiv?usp=sharing" target="_blank" rel="noopener">View</a>
+      </div>
+      <div class="entry-desc">Benchmarked property tax rates and utility fee structures across 10+ neighboring cities; used in FY26 budget workshops.</div>
+    </div>
+  </section>
+
+  <div class="contact-block">
+    <h2>Contact</h2>
+    <p>For questions about any of the work above, or verification requests.</p>
+    <a class="btn-email" href="mailto:sahil.kancherl@gmail.com">Email Sahil Kancherla</a>
+  </div>
+
+  <footer>
+    Sahil Kancherla — Lawrence E. Elkins High School, Missouri City, TX
+  </footer>
+
+</div>
+
+</body>
+</html>
